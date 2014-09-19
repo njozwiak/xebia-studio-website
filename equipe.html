@@ -1,97 +1,192 @@
----
-layout: main
-title: L'équipe
----
-<script type="text/javascript" src="javascripts/handlebars-1.0.0.beta.4.js"></script>
-<script type="text/javascript" src="javascripts/jquery-1.7.1.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
 
-<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/team.css"/>
+    <title>Xebia Studio - Notre équipe</title>
 
-<div id="bio"></div>
+    <meta charset="UTF-8">
+<meta name="author" content="Xebia IT Architects"/>
+<meta name="reply-to" content="marketing@xebia.com"/>
+<meta name="owner" content="Xebia IT Architects"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="content-language" content="fr"/>
+<meta name="robots" content="follow,index,all"/>
 
-<div class="container">
-    <div class="row-fluid">
-        <div class="span12">
-            <div id="craftmen"></div>
-        </div>
-    </div>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="icon" href="favicon.ico"/>
 
-<!-- 
-{%raw%}
--->
 
-<script id="bio-template" type="text/x-handlebars-template">
-    <div class="grey_wrapper bio">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span12">
-                    <div id="a-craftman" class="row-fluid">
-                        <div class="span{{spanleft}}" style="height:100%;">
-                            <h2>{{name}}</h2>
-                            <h3>"{{title}}"</h3>
-                            {{abstract}}
-                        </div>
-                        <div id="picto">
-                                {{#if github-url}}
-                                <a target="_blank" href="{{github-url}}"><img class="picto" src="images/equipe/picto/github.png" alt="Github de {{name}}"></a>
-                                {{/if}}
-                                {{#if twitter-url}}
-                                <a target="_blank" href="{{twitter-url}}"><img class="picto" src="images/equipe/picto/twitter.png" alt="Twitter de {{name}}"> </a>
-                                {{/if}}
-                                {{#if linkedin-url}}
-                                <a target="_blank" href="{{linkedin-url}}"><img class="picto" src="images/equipe/picto/linkedin.png" alt="Linkedin de {{name}}">  </a>
-                                {{/if}}
-                                <a target="_blank" href="mailto:{{email}}"><img class="picto" src="images/equipe/picto/mail.png" alt="email de {{name}}"></a>
-                         </div>
-                        <div class="span{{spanright}}">
-                            <img id="{{nick}}" class="team-big-picture" src="images/equipe/{{big-picture}}">
-                        </div>
-                    </div>
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="css/style-d805dc37.css"/>
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="js/main-11978a2d.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+
+    <link rel="stylesheet" href="css/home-d18cc6fc.css"/>
+
+    <script src="js/templates-4d799601.js"></script>
+
+    <script src="js/main-683d330d.js"></script>
+
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="centering">
+
+            <div class="mobile-menu-button">
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+            </div>
+
+            <a href="index.html" title="home">
+                <img src="images/header/logo-xebia-studio.png" alt="Logo Xebia Studio"
+                     title="Xebia Studio" class="logo-header"/>
+            </a>
+
+            <div class="contact-bloc">
+                <div class="left-part">
+
+                    <a href="https://plus.google.com/100396468532572979348/posts" class="socicon socicon-google"
+                       target="_blank">
+                    </a>
+
+                    <a href="https://twitter.com/XebiaFr" class="socicon socicon-twitter" target="_blank">
+                    </a>
+
+                    <a href="http://www.linkedin.com/company/xebia-france" class="socicon socicon-linkedin"
+                       target="_blank">
+                    </a>
+                </div>
+                <div class="right-part">
+                    <a href="http://blog.xebia.fr">Blog</a>
+                    <a href="mailto:studio@xebia.fr">Contact</a>
                 </div>
             </div>
+
+            <nav>
+                <ul>
+                    <li><a href="valeurs.html">Nos Valeurs</a></li>
+                    <li><a href="equipe.html">L'équipe</a></li>
+                    <li><a href="technologies.html">Technologies</a></li>
+                    <li><a href="clients.html">Nos Clients</a></li>
+                    <li><a href="rejoindre.html">Nous rejoindre</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                </ul>
+                <div class="indicator">
+                    <div class="inner-indicator"></div>
+                </div>
+            </nav>
+
         </div>
     </div>
-</script>
+</header>
 
-<script id = "craftmen-template" type = "text/x-handlebars-template" >
-<ul class = "thumbnails" >
-{{#each craftmen}}
-<li class = "span2">
-        <div class = "thumbnail">
-        <a class = "craftman" href = "#bio"> <img id="{{id}}" class="border" src="images/equipe/{{small-picture}}" alt ="{{name}}"></a>
-        <h5>{{firstname}}</h5>
+<main>
+    <section class="equipe centering">
+        <h1>L'équipe</h1>
+
+        <div class="equipiers" id="equipiers">
+            <!-- rempli depuis equipe-data.js -->
         </div>
-</li>
-{{/each}}
-</ul>
-</script>
-<!-- 
-{%endraw%}
--->
+
+    </section>
+
+</main>
+
+<footer>
+
+    <section class="social">
+        <a href="http://www.linkedin.com/company/xebia-france" class="socicon socicon-linkedin" target="_blank">
+        </a>
+
+        <a href="https://plus.google.com/100396468532572979348/posts" class="socicon socicon-google" target="_blank">
+        </a>
+
+        <a href="https://twitter.com/XebiaFr" class="socicon socicon-twitter" target="_blank">
+        </a>
+    </section>
+
+
+    <div class="alliancy">
+        <div class="tagline-xebia"></div>
+        <div class="tagline-alliance">
+            <div class="alliance-wrapper">
+                <a href="http://alliance.xebia.fr" class="logo-alliance"><img
+                        src="images/footer/footer-logo-alliance.png"
+                        alt="Alliance Xebia"></a>
+
+                <div><span class="unused">=</span>
+                    <a href="http://www.xebia.fr/">Xebia</a>
+                    <span class="unused">+</span>
+                    <a href="http://xebialabs.com/">XebiaLabs</a>
+                    <span class="unused">+</span>
+                    <a href="http://www.thiga.fr/">Thiga</a>
+                    <span class="unused">+</span>
+                    <a href="http://www.ux-republic.com/">UX-Republic</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="address">
+        <address>
+            <div class="name">Xebia Studio</div>
+            <div class="telephone">+33 (0)1 53 89 99 93 - <a href="mailto:info@xebia.fr">info@xebia.fr</a></div>
+        </address>
+        <a class="mentions-legales">Mentions légales</a>
+    </div>
+
+</footer>
+
+<div id="mentions-legales-popup">
+    <h2>Mentions Légales <button class="close">X</button></h2>
+
+    <p>
+        Conformément aux dispositions de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans
+        l'économie numérique, nous vous informons que&nbsp;:<br />
+        Le site internet <a href="http://studio.xebia.fr">studio.xebia.fr</a> est édité par&nbsp;:<br />
+        Xebia IT Architects au capital de SAS euros.<br />
+        Numéro TVA intracommunautaire&nbsp;: FR 90 479 994 147<br />
+        Numéro SIRET&nbsp;: 479 994 147 000 11<br />
+        Siège social&nbsp;: 10/12 avenue de l'Arche 92400 Courbevoie<br />
+        Téléphone&nbsp;: 0153899999<br />
+        Email&nbsp;: <a href="mailto:communication@xebia.fr">communication@xebia.fr</a><br />
+        Le directeur de la publication du site web <a href="http://studio.xebia.fr">studio.xebia.fr</a> est Xebia IT
+        Architect.<br />
+        Le site <a href="http://studio.xebia.fr">studio.xebia.fr</a> est hébergé par Github, 4th Street, San Francisco, CA,
+        United States, <a href="https://github.com/">https://github.com/</a>.<br />
+        Ces mentions légales sont générées gratuitement par l'agence web DelAdmin.
+    </p>
+</div>
 
 <script type="text/javascript">
-    var json;
-    $(document).ready(function() {
-        var craftmen_template = Handlebars.compile($('#craftmen-template').html());
-        var bio_template = Handlebars.compile($('#bio-template').html());
 
-        Handlebars.registerHelper('abstract', function() {
-            return new Handlebars.SafeString(this.abstract);
-        });
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30992053-1']);
+    _gaq.push(['_trackPageview']);
 
-        $.getJSON('team.json', function(json) {
-            $('#bio').html(bio_template(json.craftmen[0]));
-            $('#craftmen').html(craftmen_template(json));
-            $('a.craftman').click(function(event) {
-                $('#bio').html(bio_template(json.craftmen[event.target.id]));
-                $('html, body').animate({
-                        scrollTop:$('#navbar').offset().top
-                     }, 'slow');
-                return false;
-            });
-        });
-    });
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
 </script>
 
-
+</body>
+</html>
